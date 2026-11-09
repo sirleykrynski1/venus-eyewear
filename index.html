@@ -4,9 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VENUS Eyewear | Inicio</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=9">
+    <!-- Google Fonts: Syne y Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos para el Modal de Información unificado */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(22, 22, 22, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
+        }
+        .modal-content {
+            background-color: #F1E8D9;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            text-align: left;
+            border: 2px solid #990B17;
+            color: #161616;
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #161616;
+            background: none;
+            border: none;
+        }
+        .modal-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            color: #990B17;
+            margin-bottom: 20px;
+        }
+        .modal-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .modal-content li {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .modal-content li i {
+            color: #990B17;
+            margin-top: 4px;
+        }
+    </style>
 </head>
 <body>
 
@@ -19,8 +81,9 @@
         </div>
         
         <nav class="nav-links">
-            <a href="catalogo.html">Colección</a>
+            <a href="index.html" style="color: var(--crema-venus); font-weight: 600;">Inicio</a>
             <a href="#" onclick="abrirModalInfo(event)">¿Cómo comprar?</a>
+            <a href="catalogo.html">Colección</a>
             <a href="#contacto">Contacto</a>
         </nav>
         
@@ -34,11 +97,12 @@
         </div>
     </header>
 
-    <!-- MENÚ LATERAL MÓVIL (FUERA DEL NAVBAR) -->
+    <!-- MENÚ LATERAL MÓVIL -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="close-menu" id="closeMenu">&times;</button>
-        <a href="catalogo.html">Colección</a>
+        <a href="index.html">Inicio</a>
         <a href="#" onclick="abrirModalInfo(event)">¿Cómo comprar?</a>
+        <a href="catalogo.html">Colección</a>
         <a href="#contacto">Contacto</a>
         <a href="catalogo.html" class="btn-nav-outline mobile-cta">Ver colección</a>
     </div>
@@ -59,6 +123,54 @@
         </div>
     </section>
 
+    <!-- SECCIÓN DE COLECCIÓN CON CARRUSEL (8 MODELOS) -->
+    <section class="collection">
+        <div class="collection-header">
+            <h2>NUEVA COLECCIÓN</h2>
+            <div class="carousel-nav">
+                <button class="carousel-btn" id="prevBtn"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="carousel-btn" id="nextBtn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="carousel-container" id="carouselContainer">
+            <div class="card"><div class="card-img"><img src="foto-lentes14.jpeg" alt="Modelo 14"></div><div class="card-info"><div><h3>MODELO <span class="num">· 14</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2001" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+            <div class="card"><div class="card-img"><img src="foto-lentes13.jpeg" alt="Modelo 13"></div><div class="card-info"><div><h3>MODELO <span class="num">· 13</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2002" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+            <div class="card"><div class="card-img"><img src="foto-lentes1.jpeg" alt="Modelo 01"></div><div class="card-info"><div><h3>MODELO <span class="num">· 01</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2003" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+            <div class="card"><div class="card-img"><img src="foto-lentes4.jpeg" alt="Modelo 04"></div><div class="card-info"><div><h3>MODELO <span class="num">· 04</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2004" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+            <div class="card"><div class="card-img"><img src="foto-lentes7.jpeg" alt="Modelo 07"></div><div class="card-info"><div><h3>MODELO <span class="num">· 07</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2005" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+            <div class="card"><div class="card-img"><img src="foto-lentes6.jpeg" alt="Modelo 06"></div><div class="card-info"><div><h3>MODELO <span class="num">· 06</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2006" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+            <div class="card"><div class="card-img"><img src="foto-lentes12.jpeg" alt="Modelo 12"></div><div class="card-info"><div><h3>MODELO <span class="num">· 12</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2007" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+            <div class="card"><div class="card-img"><img src="foto-lente23.jpeg" alt="Modelo 23"></div><div class="card-info"><div><h3>MODELO <span class="num">· 23</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2008" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+        </div>
+    </section>
+
+    <!-- VENTANA MODAL DE INFORMACIÓN UNIFICADA -->
+    <div id="infoModal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="closeModalBtn" class="modal-close">&times;</button>
+            <h3>Información de Compra</h3>
+            <ul>
+                <li>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span><strong>Protección UV:</strong> Todos nuestros modelos cuentan con protección UV garantizada.</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <span><strong>Modalidad de seña:</strong> Los pedidos se aseguran abonando una seña del 50%.</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <span><strong>Plazos de entrega:</strong> El producto llega en un plazo estimado de 5 días.</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-box-open"></i>
+                    <span><strong>Envíos:</strong> Realizamos envíos a todo el país.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <!-- SECCIÓN DE CONTACTO -->
     <section id="contacto" class="contact">
         <h2>CONTACTO</h2>
@@ -73,34 +185,26 @@
         <p class="footer-copy">© 2026 VENUS Eyewear</p>
     </section>
 
-    <!-- VENTANA MODAL DE INFORMACIÓN (UNIFICADA) -->
-    <div id="infoModal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(22, 22, 22, 0.6); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(4px);">
-        <div class="modal-content" style="background-color: #F1E8D9; padding: 40px; border-radius: 12px; max-width: 500px; width: 90%; box-shadow: 0 20px 40px rgba(0,0,0,0.2); position: relative; text-align: left; border: 2px solid #990B17; color: #161616;">
-            <button id="closeModalBtn" class="modal-close" style="position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: #161616; background: none; border: none;">&times;</button>
-            <h3 style="font-family: 'Syne', sans-serif; font-size: 1.8rem; color: #990B17; margin-bottom: 20px;">Información de Compra</h3>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5; display: flex; gap: 10px; align-items: flex-start;">
-                    <i class="fa-solid fa-shield-halved" style="color: #990B17; margin-top: 4px;"></i>
-                    <span><strong>Protección UV:</strong> Todos nuestros modelos cuentan con protección UV garantizada.</span>
-                </li>
-                <li style="margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5; display: flex; gap: 10px; align-items: flex-start;">
-                    <i class="fa-solid fa-hand-holding-dollar" style="color: #990B17; margin-top: 4px;"></i>
-                    <span><strong>Modalidad de seña:</strong> Los pedidos se aseguran abonando una seña del 50%.</span>
-                </li>
-                <li style="margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5; display: flex; gap: 10px; align-items: flex-start;">
-                    <i class="fa-solid fa-truck-fast" style="color: #990B17; margin-top: 4px;"></i>
-                    <span><strong>Plazos de entrega:</strong> El producto llega en un plazo estimado de 5 días.</span>
-                </li>
-                <li style="margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5; display: flex; gap: 10px; align-items: flex-start;">
-                    <i class="fa-solid fa-box-open" style="color: #990B17; margin-top: 4px;"></i>
-                    <span><strong>Envíos:</strong> Realizamos envíos a todo el país.</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
     <!-- SCRIPTS -->
     <script>
+        // Lógica del carrusel horizontal
+        const carousel = document.getElementById('carouselContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        if(nextBtn && carousel) {
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: 350, behavior: 'smooth' });
+            });
+        }
+
+        if(prevBtn && carousel) {
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: -350, behavior: 'smooth' });
+            });
+        }
+
+        // Lógica del menú móvil
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
         const closeMenu = document.getElementById('closeMenu');
@@ -110,6 +214,7 @@
             closeMenu.addEventListener('click', () => { mobileMenu.classList.remove('active'); });
         }
 
+        // Lógica del modal unificado
         const modalOverlay = document.getElementById('infoModal');
         const closeModalBtn = document.getElementById('closeModalBtn');
 
@@ -126,7 +231,6 @@
         window.addEventListener('click', (e) => {
             if (e.target === modalOverlay) { modalOverlay.style.display = 'none'; }
         });
-
     </script>
 </body>
 </html>
