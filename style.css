@@ -567,26 +567,29 @@ body, html {
         white-space: nowrap !important; /* Evita que la palabra se rompa en varias líneas */
     }
 }
-/* VISTA EN CELULAR (1 TARJETA POR FILA BIEN ESPACIOSA) */
-@media (max-width: 600px) {
+/* DISEÑO ESTRICTO DE 1 COLUMNA EN CELULARES */
+@media (max-width: 768px) {
     .grid-catalog {
-        display: grid !important;
-        grid-template-columns: 1fr !important; /* 1 sola columna amplia por fila */
-        gap: 25px !important;
-        padding: 0 10px !important;
-    }
-
-    .grid-catalog .card-info {
-        padding: 15px !important;
         display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        padding: 0 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
-    .btn-consult {
-        padding: 8px 16px !important;
-        font-size: 0.8rem !important;
-        white-space: nowrap !important;
+    .grid-catalog .card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .grid-catalog .card-img img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 450px !important;
+        object-fit: cover !important;
+        cursor: pointer !important;
     }
 }
 
