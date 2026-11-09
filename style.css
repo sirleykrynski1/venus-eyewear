@@ -302,7 +302,7 @@ body {
     color: var(--blanco);
 }
 
-/* CUADRÍCULA DEL CATÁLOGO COMPLETO (PÁGINA CATALOGO.HTML) */
+/* CUADRÍCULA DEL CATÁLOGO COMPLETO */
 .catalog-section {
     background-color: var(--crema-venus);
     padding: 80px 60px;
@@ -369,38 +369,6 @@ body {
     opacity: 0.4;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .navbar {
-        padding: 15px 25px;
-    }
-    .nav-links, .btn-nav-outline {
-        display: none;
-    }
-    .hero {
-        flex-direction: column;
-        padding: 50px 25px;
-        text-align: center;
-    }
-    .hero h1 {
-        font-size: 4rem;
-    }
-    .subtitle-eyewear {
-        font-size: 2.2rem;
-    }
-    .arch-frame {
-        width: 280px;
-        height: 360px;
-    }
-    .collection, .catalog-section {
-        padding: 60px 20px;
-    }
-    .collection-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
 /* ESTILOS DE LA BARRA DE BÚSQUEDA Y FILTROS */
 .filters-wrapper {
     display: flex;
@@ -411,7 +379,6 @@ body {
     width: 100%;
 }
 
-/* Barra de búsqueda refinada */
 .search-input {
     width: 100%;
     max-width: 420px;
@@ -432,7 +399,6 @@ body {
     box-shadow: 0 4px 20px rgba(153, 11, 23, 0.12);
 }
 
-/* Contenedor de botones de filtro */
 .filter-container {
     display: flex;
     justify-content: center;
@@ -440,7 +406,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* Botones en formato de píldora con los colores de Venus */
 .filter-btn {
     background-color: transparent;
     border: 1px solid rgba(22, 22, 22, 0.25);
@@ -467,7 +432,33 @@ body {
     box-shadow: 0 4px 12px rgba(153, 11, 23, 0.25);
 }
 
-/* Ajustes del Navbar para Celulares */
+/* RESPONSIVE MEDIA QUERIES (BIEN CERRADOS) */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        padding: 50px 25px;
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 4rem;
+    }
+    .subtitle-eyewear {
+        font-size: 2.2rem;
+    }
+    .arch-frame {
+        width: 280px;
+        height: 360px;
+    }
+    .collection, .catalog-section {
+        padding: 60px 20px;
+    }
+    .collection-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: 12px 20px !important;
@@ -476,14 +467,14 @@ body {
         align-items: center !important;
     }
     .nav-links {
-        display: none !important; /* Oculta los enlaces largos si usas versión mobile o compacta */
+        display: none !important; 
     }
     .btn-nav-outline {
         font-size: 0.75rem !important;
         padding: 6px 12px !important;
+        display: inline-block !important;
     }
     .logo-img {
         max-height: 30px !important;
     }
-}
 }
