@@ -3,27 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VENUS Eyewear | Catálogo</title>
-    <link rel="stylesheet" href="style.css?v=7">
+    <title>VENUS Eyewear | Inicio</title>
+    <link rel="stylesheet" href="style.css?v=8">
     <!-- Google Fonts: Syne y Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome para íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            background-color: #F1E8D9 !important;
-            color: #161616 !important;
-        }
-        .contact {
-            background-color: #161616 !important;
-        }
-        .contact h2 {
-            color: #F1E8D9 !important;
-        }
-        .social-icon-link {
-            color: #F1E8D9 !important;
-        }
-        /* Estilos para el Modal de Información */
+        /* Estilos para el Modal de Información unificado */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -94,14 +81,14 @@
         </div>
         
         <nav class="nav-links">
-            <a href="index.html">Inicio</a>
+            <a href="index.html" style="color: var(--crema-venus); font-weight: 600;">Inicio</a>
             <a href="#" onclick="abrirModalInfo(event)">¿Cómo comprar?</a>
-            <a href="catalogo.html" style="color: var(--crema-venus); font-weight: 600;">Colección</a>
-            <a href="index.html#contacto">Contacto</a>
+            <a href="catalogo.html">Colección</a>
+            <a href="#contacto">Contacto</a>
         </nav>
         
         <div class="nav-actions">
-            <a href="index.html" class="btn-nav-outline desktop-btn">Volver al inicio</a>
+            <a href="catalogo.html" class="btn-nav-outline desktop-btn">Ver colección</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
                 <span></span>
                 <span></span>
@@ -116,18 +103,50 @@
         <a href="index.html">Inicio</a>
         <a href="#" onclick="abrirModalInfo(event)">¿Cómo comprar?</a>
         <a href="catalogo.html">Colección</a>
-        <a href="index.html#contacto">Contacto</a>
-        <a href="index.html" class="btn-nav-outline mobile-cta">Volver al inicio</a>
+        <a href="#contacto">Contacto</a>
+        <a href="catalogo.html" class="btn-nav-outline mobile-cta">Ver colección</a>
     </div>
 
-    <!-- CABECERA DEL CATÁLOGO -->
-    <section class="catalog-header" style="background-color: var(--rojo-venus); padding: 60px 80px; text-align: center;">
-        <span class="tag">VENUS EYEWEAR</span>
-        <h1 style="font-family: 'Syne', sans-serif; font-size: 3.8rem; color: var(--crema-venus); margin-top: 10px;">Catálogo</h1>
-        <p style="font-size: 1.1rem; color: var(--blanco); opacity: 0.9; margin-top: 15px;">Explora todos los modelos diseñados para destacar.</p>
+    <!-- SECCIÓN HERO -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <span class="tag">CATÁLOGO</span>
+            <h1>VENUS</h1>
+            <span class="subtitle-eyewear">Eyewear</span>
+            <p>Más que un accesorio, la firma de tu mirada.</p>
+            <a href="catalogo.html" class="btn-hero">Ver colección</a>
+        </div>
+        <div class="hero-image-container">
+            <div class="arch-frame">
+                <img src="foto-portada.jpg" alt="Venus Eyewear Modelo">
+            </div>
+        </div>
     </section>
 
-    <!-- VENTANA MODAL DE INFORMACIÓN -->
+    <!-- SECCIÓN DE COLECCIÓN CON CARRUSEL -->
+    <section class="collection">
+        <div class="collection-header">
+            <h2>NUEVA COLECCIÓN</h2>
+            <div class="carousel-nav">
+                <button class="carousel-btn" id="prevBtn"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="carousel-btn" id="nextBtn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="carousel-container" id="carouselContainer">
+    <!-- 8 TARJETAS DESTACADAS DEL CARRUSEL -->
+    <div class="card"><div class="card-img"><img src="foto-lentes14.jpeg" alt="Modelo 14"></div><div class="card-info"><div><h3>MODELO <span class="num">· 14</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2001" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+    <div class="card"><div class="card-img"><img src="foto-lentes13.jpeg" alt="Modelo 13"></div><div class="card-info"><div><h3>MODELO <span class="num">· 13</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2002" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+    <div class="card"><div class="card-img"><img src="foto-lentes1.jpeg" alt="Modelo 01"></div><div class="card-info"><div><h3>MODELO <span class="num">· 01</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2003" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+    <div class="card"><div class="card-img"><img src="foto-lentes4.jpeg" alt="Modelo 04"></div><div class="card-info"><div><h3>MODELO <span class="num">· 04</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2004" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+    <div class="card"><div class="card-img"><img src="foto-lentes7.jpeg" alt="Modelo 07"></div><div class="card-info"><div><h3>MODELO <span class="num">· 07</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2005" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+    <div class="card"><div class="card-img"><img src="foto-lentes6.jpeg" alt="Modelo 06"></div><div class="card-info"><div><h3>MODELO <span class="num">· 06</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2006" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+    <div class="card"><div class="card-img"><img src="foto-lentes12.jpeg" alt="Modelo 12"></div><div class="card-info"><div><h3>MODELO <span class="num">· 12</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2007" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+    <div class="card"><div class="card-img"><img src="foto-lente23.jpeg" alt="Modelo 23"></div><div class="card-info"><div><h3>MODELO <span class="num">· 23</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2008" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
+</div>
+    </section>
+
+    <!-- VENTANA MODAL DE INFORMACIÓN UNIFICADA -->
     <div id="infoModal" class="modal-overlay">
         <div class="modal-content">
             <button id="closeModalBtn" class="modal-close">&times;</button>
@@ -153,89 +172,14 @@
         </div>
     </div>
 
-    <!-- SECCIÓN DE FILTROS Y CUADRÍCULA -->
-    <section class="catalog-section" style="background-color: #F1E8D9; padding: 60px 40px;">
-        
-        <!-- FILTROS -->
-        <div class="filter-container" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 50px; flex-wrap: wrap;">
-            <button class="filter-btn active" data-filter="all" style="background-color: #990B17; color: #FFFFFF; border: 1px solid #990B17; padding: 10px 24px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;">Todos</button>
-            <button class="filter-btn" data-filter="Accesibles" style="background-color: transparent; color: #161616; border: 1px solid rgba(22, 22, 22, 0.25); padding: 10px 24px; border-radius: 30px; font-size: 0.85rem; font-weight: 500; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;">Accesibles</button>
-            <button class="filter-btn" data-filter="Deportivos" style="background-color: transparent; color: #161616; border: 1px solid rgba(22, 22, 22, 0.25); padding: 10px 24px; border-radius: 30px; font-size: 0.85rem; font-weight: 500; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;">Deportivos</button>
-            <button class="filter-btn" data-filter="Premium" style="background-color: transparent; color: #161616; border: 1px solid rgba(22, 22, 22, 0.25); padding: 10px 24px; border-radius: 30px; font-size: 0.85rem; font-weight: 500; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;">Premium</button>
-            <button class="filter-btn" data-filter="Especiales" style="background-color: transparent; color: #161616; border: 1px solid rgba(22, 22, 22, 0.25); padding: 10px 24px; border-radius: 30px; font-size: 0.85rem; font-weight: 500; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;">Especiales</button>
-        </div>
-
-        <div class="grid-catalog">
-            <!-- MODELOS 01 al 58 -->
-            <div class="card" data-category="Especiales"><div class="card-img"><img src="foto-lentes1.jpeg" alt="Modelo 01"></div><div class="card-info"><div><h3>MODELO <span class="num">· 01</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2001" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Especiales"><div class="card-img"><img src="foto-lentes2.jpeg" alt="Modelo 02"></div><div class="card-info"><div><h3>MODELO <span class="num">· 02</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2002" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes3.jpeg" alt="Modelo 03"></div><div class="card-info"><div><h3>MODELO <span class="num">· 03</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2003" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Especiales"><div class="card-img"><img src="foto-lentes4.jpeg" alt="Modelo 04"></div><div class="card-info"><div><h3>MODELO <span class="num">· 04</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2004" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Especiales"><div class="card-img"><img src="foto-lentes5.jpeg" alt="Modelo 05"></div><div class="card-info"><div><h3>MODELO <span class="num">· 05</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2005" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Especiales"><div class="card-img"><img src="foto-lentes6.jpeg" alt="Modelo 06"></div><div class="card-info"><div><h3>MODELO <span class="num">· 06</span></h3><p class="card-price">$20.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2006" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes7.jpeg" alt="Modelo 07"></div><div class="card-info"><div><h3>MODELO <span class="num">· 07</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2007" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes8.jpeg" alt="Modelo 08"></div><div class="card-info"><div><h3>MODELO <span class="num">· 08</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2008" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes9.jpeg" alt="Modelo 09"></div><div class="card-info"><div><h3>MODELO <span class="num">· 09</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2009" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes10.jpeg" alt="Modelo 10"></div><div class="card-info"><div><h3>MODELO <span class="num">· 10</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2010" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes11.jpeg" alt="Modelo 11"></div><div class="card-info"><div><h3>MODELO <span class="num">· 11</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2011" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes12.jpeg" alt="Modelo 12"></div><div class="card-info"><div><h3>MODELO <span class="num">· 12</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2012" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes13.jpeg" alt="Modelo 13"></div><div class="card-info"><div><h3>MODELO <span class="num">· 13</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2013" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes14.jpeg" alt="Modelo 14"></div><div class="card-info"><div><h3>MODELO <span class="num">· 14</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2014" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes15.jpeg" alt="Modelo 15"></div><div class="card-info"><div><h3>MODELO <span class="num">· 15</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2015" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes16.jpeg" alt="Modelo 16"></div><div class="card-info"><div><h3>MODELO <span class="num">· 16</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2016" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes17.jpeg" alt="Modelo 17"></div><div class="card-info"><div><h3>MODELO <span class="num">· 17</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2017" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes18.jpeg" alt="Modelo 18"></div><div class="card-info"><div><h3>MODELO <span class="num">· 18</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2018" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes19.jpeg" alt="Modelo 19"></div><div class="card-info"><div><h3>MODELO <span class="num">· 19</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2019" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes20.jpeg" alt="Modelo 20"></div><div class="card-info"><div><h3>MODELO <span class="num">· 20</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2020" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Deportivos"><div class="card-img"><img src="foto-lentes21.jpeg" alt="Modelo 21"></div><div class="card-info"><div><h3>MODELO <span class="num">· 21</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2021" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Deportivos"><div class="card-img"><img src="foto-lentes22.jpeg" alt="Modelo 22"></div><div class="card-info"><div><h3>MODELO <span class="num">· 22</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2022" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes23.jpeg" alt="Modelo 23"></div><div class="card-info"><div><h3>MODELO <span class="num">· 23</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2023" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes24.jpeg" alt="Modelo 24"></div><div class="card-info"><div><h3>MODELO <span class="num">· 24</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2024" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes25.jpeg" alt="Modelo 25"></div><div class="card-info"><div><h3>MODELO <span class="num">· 25</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2025" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes26.jpeg" alt="Modelo 26"></div><div class="card-info"><div><h3>MODELO <span class="num">· 26</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2026" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes27.jpeg" alt="Modelo 27"></div><div class="card-info"><div><h3>MODELO <span class="num">· 27</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2027" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes28.jpeg" alt="Modelo 28"></div><div class="card-info"><div><h3>MODELO <span class="num">· 28</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2028" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes29.jpeg" alt="Modelo 29"></div><div class="card-info"><div><h3>MODELO <span class="num">· 29</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2029" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes30.jpeg" alt="Modelo 30"></div><div class="card-info"><div><h3>MODELO <span class="num">· 30</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2030" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes31.jpeg" alt="Modelo 31"></div><div class="card-info"><div><h3>MODELO <span class="num">· 31</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2031" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes32.jpeg" alt="Modelo 32"></div><div class="card-info"><div><h3>MODELO <span class="num">· 32</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2032" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes33.jpeg" alt="Modelo 33"></div><div class="card-info"><div><h3>MODELO <span class="num">· 33</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2033" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes34.jpeg" alt="Modelo 34"></div><div class="card-info"><div><h3>MODELO <span class="num">· 34</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2034" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes35.jpeg" alt="Modelo 35"></div><div class="card-info"><div><h3>MODELO <span class="num">· 35</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2035" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes36.jpeg" alt="Modelo 36"></div><div class="card-info"><div><h3>MODELO <span class="num">· 36</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2036" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes37.jpeg" alt="Modelo 37"></div><div class="card-info"><div><h3>MODELO <span class="num">· 37</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2037" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes38.jpeg" alt="Modelo 38"></div><div class="card-info"><div><h3>MODELO <span class="num">· 38</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2038" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes39.jpeg" alt="Modelo 39"></div><div class="card-info"><div><h3>MODELO <span class="num">· 39</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2039" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes40.jpeg" alt="Modelo 40"></div><div class="card-info"><div><h3>MODELO <span class="num">· 40</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2040" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes41.jpeg" alt="Modelo 41"></div><div class="card-info"><div><h3>MODELO <span class="num">· 41</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2041" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes42.jpeg" alt="Modelo 42"></div><div class="card-info"><div><h3>MODELO <span class="num">· 42</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2042" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes43.jpeg" alt="Modelo 43"></div><div class="card-info"><div><h3>MODELO <span class="num">· 43</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2043" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes44.jpeg" alt="Modelo 44"></div><div class="card-info"><div><h3>MODELO <span class="num">· 44</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2044" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes45.jpeg" alt="Modelo 45"></div><div class="card-info"><div><h3>MODELO <span class="num">· 45</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2045" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes46.jpeg" alt="Modelo 46"></div><div class="card-info"><div><h3>MODELO <span class="num">· 46</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2046" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes47.jpeg" alt="Modelo 47"></div><div class="card-info"><div><h3>MODELO <span class="num">· 47</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2047" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes48.jpeg" alt="Modelo 48"></div><div class="card-info"><div><h3>MODELO <span class="num">· 48</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2048" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes49.jpeg" alt="Modelo 49"></div><div class="card-info"><div><h3>MODELO <span class="num">· 49</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2049" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes50.jpeg" alt="Modelo 50"></div><div class="card-info"><div><h3>MODELO <span class="num">· 50</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2050" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes51.jpeg" alt="Modelo 51"></div><div class="card-info"><div><h3>MODELO <span class="num">· 51</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2051" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes52.jpeg" alt="Modelo 52"></div><div class="card-info"><div><h3>MODELO <span class="num">· 52</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2052" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes53.jpeg" alt="Modelo 53"></div><div class="card-info"><div><h3>MODELO <span class="num">· 53</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2053" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Premium"><div class="card-img"><img src="foto-lentes54.jpeg" alt="Modelo 54"></div><div class="card-info"><div><h3>MODELO <span class="num">· 54</span></h3><p class="card-price">$17.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2054" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes55.jpeg" alt="Modelo 55"></div><div class="card-info"><div><h3>MODELO <span class="num">· 55</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2055" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes56.jpeg" alt="Modelo 56"></div><div class="card-info"><div><h3>MODELO <span class="num">· 56</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2056" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes57.jpeg" alt="Modelo 57"></div><div class="card-info"><div><h3>MODELO <span class="num">· 57</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2057" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-            <div class="card" data-category="Accesibles"><div class="card-img"><img src="foto-lentes58.jpeg" alt="Modelo 58"></div><div class="card-info"><div><h3>MODELO <span class="num">· 58</span></h3><p class="card-price">$15.000</p></div><a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20consultar%20por%20el%20Modelo%2058" target="_blank" class="btn-consult">CONSULTAR</a></div></div>
-        </div>
-    </section>
-
-    <!-- FOOTER / CONTACTO -->
+    <!-- SECCIÓN DE CONTACTO -->
     <section id="contacto" class="contact">
         <h2>CONTACTO</h2>
         <div class="contact-links">
             <a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20contactarme%20con%20Venus%20Eyewear" target="_blank" class="social-icon-link">
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp
             </a>
-            <a href="https://instagram.com/venus.eyewear" target="_blank" class="social-icon-link">
+            <a href="https://www.instagram.com/venus.eyewear" target="_blank" class="social-icon-link">
                 <i class="fa-brands fa-instagram"></i> Instagram
             </a>
         </div>
@@ -244,38 +188,24 @@
 
     <!-- SCRIPTS -->
     <script>
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const cards = document.querySelectorAll('.grid-catalog .card');
+        // Lógica del carrusel horizontal
+        const carousel = document.getElementById('carouselContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => {
-                    btn.classList.remove('active');
-                    btn.style.backgroundColor = 'transparent';
-                    btn.style.color = '#161616';
-                    btn.style.borderColor = 'rgba(22, 22, 22, 0.25)';
-                    btn.style.fontWeight = '500';
-                });
-
-                button.classList.add('active');
-                button.style.backgroundColor = '#990B17';
-                button.style.color = '#FFFFFF';
-                button.style.borderColor = '#990B17';
-                button.style.fontWeight = '600';
-
-                const filterValue = button.getAttribute('data-filter');
-
-                cards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-                    if (filterValue === 'all' || category === filterValue) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+        if(nextBtn && carousel) {
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: 350, behavior: 'smooth' });
             });
-        });
+        }
 
+        if(prevBtn && carousel) {
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: -350, behavior: 'smooth' });
+            });
+        }
+
+        // Lógica del menú móvil
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
         const closeMenu = document.getElementById('closeMenu');
@@ -285,6 +215,7 @@
             closeMenu.addEventListener('click', () => { mobileMenu.classList.remove('active'); });
         }
 
+        // Lógica del modal unificado
         const modalOverlay = document.getElementById('infoModal');
         const closeModalBtn = document.getElementById('closeModalBtn');
 
