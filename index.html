@@ -13,19 +13,39 @@
 <body>
 
     <!-- ENCABEZADO / NAVBAR -->
-    <header class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo-venus.png" alt="VENUS Eyewear" class="logo-img">
-            </a>
-        </div>
-        <nav class="nav-links">
-            <a href="catalogo.html">Colección</a>
-            <a href="#experiencia">Experiencia</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-        <a href="catalogo.html" class="btn-nav-outline">Ver colección</a>
-    </header>
+<header class="navbar">
+    <div class="logo">
+        <a href="index.html">
+            <img src="logo-venus.png" alt="VENUS Eyewear" class="logo-img">
+        </a>
+    </div>
+    
+    <!-- Enlaces normales para PC -->
+    <nav class="nav-links">
+        <a href="catalogo.html">Colección</a>
+        <a href="#como-comprar">Cómo comprar</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    
+    <div class="nav-actions">
+        <a href="catalogo.html" class="btn-nav-outline desktop-btn">Ver colección</a>
+        <!-- Botón Hamburguesa para Celular -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<!-- Menú Desplegable Lateral para Celular -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">&times;</button>
+    <a href="catalogo.html">Colección</a>
+    <a href="#como-comprar">Cómo comprar</a>
+    <a href="#contacto">Contacto</a>
+    <a href="catalogo.html" class="btn-nav-outline mobile-cta">Ver colección</a>
+</div>
 
     <!-- SECCIÓN HERO -->
     <section id="inicio" class="hero">
@@ -179,5 +199,26 @@
             container.scrollBy({ left: -350, behavior: 'smooth' });
         });
     </script>
+
+    <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+    });
+
+    // Cerrar menú al hacer clic en cualquier enlace
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+    });
+</script>
 </body>
 </html>
