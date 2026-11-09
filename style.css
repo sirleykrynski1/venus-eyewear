@@ -469,3 +469,8 @@ body {
         display: flex !important;
     }
 }
+@media (min-width: 769px) {
+    .menu-toggle, .mobile-menu {
+        display: none !important;
+    }
+}
