@@ -475,34 +475,43 @@ body {
     }
 }
 
-/* RESET PARA EVITAR DESBORDAMIENTO HORIZONTAL EN MÓVILES */
-html, body {
+/* FORZAR QUE NADA SE PASE DEL ANCHO DE LA PANTALLA EN VERTICAL */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body, html {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    margin: 0;
-    padding: 0;
 }
 
-/* RESPONSIVIDAD DEL HERO */
+/* CONTENEDOR HERO ADAPTABLE */
 .hero {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    padding: 40px 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 30px 15px !important;
+    margin: 0 !important;
 }
 
 .hero-content, .hero-image-container {
     width: 100% !important;
     max-width: 100% !important;
-    box-sizing: border-box;
+}
+
+/* ASEGURAR QUE LA IMAGEN Y SU MARCO NO SE EXPASAN DE MÁS */
+.arch-frame {
+    width: 100% !important;
+    max-width: 300px !important; /* Ajusta este valor si lo ves muy chico */
+    margin: 0 auto !important;
 }
 
 .arch-frame img {
-    max-width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
+    display: block;
 }
 
 /* CORRECCIÓN PARA CARRUSEL Y ELEMENTOS ANCHOS EN MÓVIL */
