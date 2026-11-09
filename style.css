@@ -633,4 +633,20 @@ body {
         display: flex !important;
     }
 }
+
+/* FORZAR OCULTAR MENÚ MÓVIL EN COMPUTADORA */
+@media (min-width: 769px) {
+    .mobile-menu, .menu-toggle {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links, .desktop-btn {
+        display: none !important;
+    }
+    .menu-toggle {
+        display: flex !important;
+    }
+}
 }
