@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VENUS Eyewear | Catálogo</title>
-    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="style.css?v=14">
     <!-- Google Fonts: Syne y Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome para íconos -->
@@ -145,6 +145,113 @@
             </ul>
         </div>
     </div>
+
+    <!-- MODAL PARA VER IMAGEN EN TAMAÑO REAL / AMPLIADA (ZOOM) -->
+    <div id="imageModal" class="image-modal-overlay">
+        <button id="closeImageModalBtn" class="image-modal-close">&times;</button>
+        <img id="modalExpandedImg" class="image-modal-content" src="" alt="Imagen ampliada">
+    </div>
+
+    <!-- FOOTER / CONTACTO -->
+    <section id="contacto" class="contact">
+        <h2>CONTACTO</h2>
+        <div class="contact-links">
+            <a href="https://wa.me/5493782501008?text=Hola!%20Quiero%20contactarme%20con%20Venus%20Eyewear" target="_blank" class="social-icon-link">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://instagram.com/venus.eyewear" target="_blank" class="social-icon-link">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+        </div>
+        <p class="footer-copy">© 2026 VENUS Eyewear</p>
+    </section>
+
+    <!-- SCRIPTS -->
+    <script>
+        // FILTROS DE CATEGORÍA
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.grid-catalog .card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.style.backgroundColor = 'transparent';
+                    btn.style.color = '#161616';
+                    btn.style.borderColor = 'rgba(22, 22, 22, 0.25)';
+                    btn.style.fontWeight = '500';
+                });
+
+                button.classList.add('active');
+                button.style.backgroundColor = '#990B17';
+                button.style.color = '#FFFFFF';
+                button.style.borderColor = '#990B17';
+                button.style.fontWeight = '600';
+
+                const filterValue = button.getAttribute('data-filter');
+
+                cards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // MENÚ MÓVIL
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        if(menuToggle && mobileMenu && closeMenu) {
+            menuToggle.addEventListener('click', () => { mobileMenu.classList.add('active'); });
+            closeMenu.addEventListener('click', () => { mobileMenu.classList.remove('active'); });
+        }
+
+        // MODAL INFO COMPRA
+        const modalOverlay = document.getElementById('infoModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        function abrirModalInfo(e) {
+            if(e) e.preventDefault();
+            if(modalOverlay) modalOverlay.style.display = 'flex';
+            if(mobileMenu) mobileMenu.classList.remove('active');
+        }
+
+        if(closeModalBtn) {
+            closeModalBtn.addEventListener('click', () => { modalOverlay.style.display = 'none'; });
+        }
+
+        // VISTA AMPLIADA DE IMÁGENES (ZOOM)
+        const imageModal = document.getElementById('imageModal');
+        const modalExpandedImg = document.getElementById('modalExpandedImg');
+        const closeImageModalBtn = document.getElementById('closeImageModalBtn');
+        const cardImages = document.querySelectorAll('.card-img img');
+
+        cardImages.forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => {
+                modalExpandedImg.src = img.src;
+                imageModal.style.display = 'flex';
+            });
+        });
+
+        if(closeImageModalBtn) {
+            closeImageModalBtn.addEventListener('click', () => {
+                imageModal.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) { modalOverlay.style.display = 'none'; }
+            if (e.target === imageModal) { imageModal.style.display = 'none'; }
+        });
+    </script>
+</body>
+</html>
 
     <!-- SECCIÓN DE FILTROS Y CUADRÍCULA DIRECTA -->
     <section class="catalog-section" style="background-color: #F1E8D9; padding: 60px 40px;">
