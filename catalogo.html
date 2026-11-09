@@ -84,21 +84,42 @@
 </head>
 <body>
 
-    <!-- NAVBAR (NEGRO ORIGINAL) -->
+    <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">
             <a href="index.html">
                 <img src="logo-venus.png" alt="VENUS Eyewear" class="logo-img">
             </a>
         </div>
+        
+        <!-- Enlaces normales para PC -->
         <nav class="nav-links">
             <a href="index.html">Inicio</a>
-            <a href="#" id="openModalBtn" style="color: var(--crema-venus); font-weight: 600; cursor: pointer;">¿Cómo comprar?</a>
+            <a href="#" onclick="abrirModalInfo(event)">¿Cómo comprar?</a>
             <a href="catalogo.html" style="color: var(--crema-venus); font-weight: 600;">Colección</a>
             <a href="index.html#contacto">Contacto</a>
         </nav>
-        <a href="index.html" class="btn-nav-outline">Volver al inicio</a>
+        
+        <div class="nav-actions">
+            <a href="index.html" class="btn-nav-outline desktop-btn">Volver al inicio</a>
+            <!-- Botón Hamburguesa para Celular -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
+
+    <!-- Menú Desplegable Lateral para Celular -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">&times;</button>
+        <a href="index.html">Inicio</a>
+        <a href="#" onclick="abrirModalInfo(event)">¿Cómo comprar?</a>
+        <a href="catalogo.html">Colección</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a href="index.html" class="btn-nav-outline mobile-cta">Volver al inicio</a>
+    </div>
 
     <!-- CABECERA DEL CATÁLOGO -->
     <section class="catalog-header" style="background-color: var(--rojo-venus); padding: 60px 80px; text-align: center;">
@@ -803,7 +824,7 @@
         <p class="footer-copy">© 2026 VENUS Eyewear</p>
     </section>
 
-    <!-- SCRIPTS DE FILTRADO Y MODAL -->
+    <!-- SCRIPTS -->
     <script>
         const filterButtons = document.querySelectorAll('.filter-btn');
         const cards = document.querySelectorAll('.grid-catalog .card');
@@ -837,18 +858,34 @@
             });
         });
 
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        if(menuToggle && mobileMenu && closeMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+            });
+
+            closeMenu.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        }
+
         const modal = document.getElementById('infoModal');
-        const openBtn = document.getElementById('openModalBtn');
-        const closeBtn = document.getElementById('closeModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
 
-        openBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            modal.style.display = 'flex';
-        });
+        function abrirModalInfo(e) {
+            if(e) e.preventDefault();
+            if(modal) modal.style.display = 'flex';
+            if(mobileMenu) mobileMenu.classList.remove('active');
+        }
 
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
+        if(closeModalBtn) {
+            closeModalBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        }
 
         window.addEventListener('click', (e) => {
             if (e.target === modal) {
@@ -856,27 +893,5 @@
             }
         });
     </script>
-
-    <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMenu = document.getElementById('closeMenu');
-
-    menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.add('active');
-    });
-
-    closeMenu.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-    });
-
-    // Cerrar menú al hacer clic en cualquier enlace
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
-    });
-</script>
-
 </body>
 </html>
