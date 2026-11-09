@@ -23,7 +23,7 @@
     <!-- Enlaces normales para PC -->
     <nav class="nav-links">
         <a href="catalogo.html">Colección</a>
-        <a href="#como-comprar">Cómo comprar</a>
+        <a href="#" onclick="abrirModalInfo(event)">Cómo comprar</a>
         <a href="#contacto">Contacto</a>
     </nav>
     
@@ -42,7 +42,7 @@
 <div class="mobile-menu" id="mobileMenu">
     <button class="close-menu" id="closeMenu">&times;</button>
     <a href="catalogo.html">Colección</a>
-    <a href="#como-comprar">Cómo comprar</a>
+    <a href="#" onclick="abrirModalInfo(event)">Cómo comprar</a>
     <a href="#contacto">Contacto</a>
     <a href="catalogo.html" class="btn-nav-outline mobile-cta">Ver colección</a>
 </div>
@@ -218,6 +218,60 @@
         link.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
         });
+    });
+</script>
+
+<!-- VENTANA MODAL DE INFORMACIÓN (CÓMO COMPRAR) -->
+<div id="infoModal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 3000;">
+    <div class="modal-content" style="background-color: var(--crema-venus, #F1E8D9); color: var(--oscuro-venus, #161616); padding: 30px; border-radius: 12px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+        <button id="closeModalBtn" class="modal-close" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--oscuro-venus, #161616);">&times;</button>
+        <h3 style="font-family: 'Syne', sans-serif; font-size: 1.5rem; margin-bottom: 20px;">Información de Compra</h3>
+        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px;">
+            <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <i class="fa-solid fa-shield-halved" style="color: var(--rojo-venus, #990B17); font-size: 1.2rem; margin-top: 3px;"></i>
+                <span><strong>Protección UV:</strong> Todos nuestros modelos cuentan con protección UV garantizada para el cuidado de tus ojos.</span>
+            </li>
+            <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <i class="fa-solid fa-hand-holding-dollar" style="color: var(--rojo-venus, #990B17); font-size: 1.2rem; margin-top: 3px;"></i>
+                <span><strong>Modalidad de seña:</strong> Los pedidos se aseguran abonando una seña del 50% al momento de encargar.</span>
+            </li>
+            <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <i class="fa-solid fa-truck-fast" style="color: var(--rojo-venus, #990B17); font-size: 1.2rem; margin-top: 3px;"></i>
+                <span><strong>Plazos de entrega:</strong> El producto llega en un plazo estimado de 5 días una vez cerrado el pedido.</span>
+            </li>
+            <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <i class="fa-solid fa-box-open" style="color: var(--rojo-venus, #990B17); font-size: 1.2rem; margin-top: 3px;"></i>
+                <span><strong>Envíos:</strong> Realizamos envíos a todo el país para que recibas tus Venus donde estés.</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    const infoModal = document.getElementById('infoModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    // Función para abrir el modal desde los enlaces del menú
+    function abrirModalInfo(e) {
+        if(e) e.preventDefault();
+        infoModal.style.display = 'flex';
+        // Si el menú hamburguesa móvil está abierto, lo cerramos para que no estorbe
+        const mobileMenu = document.getElementById('mobileMenu');
+        if(mobileMenu) mobileMenu.classList.remove('active');
+    }
+
+    // Botón de la X para cerrar
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+            infoModal.style.display = 'none';
+        });
+    }
+
+    // Cerrar si hacen clic fuera de la cajita blanca
+    window.addEventListener('click', (e) => {
+        if (e.target === infoModal) {
+            infoModal.style.display = 'none';
+        }
     });
 </script>
 </body>
