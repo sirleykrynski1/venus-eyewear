@@ -475,7 +475,7 @@ body {
     }
 }
 
-/* FORZAR QUE NADA SE PASE DEL ANCHO DE LA PANTALLA EN VERTICAL */
+/* DISEÑO BASE PARA COMPUTADORA */
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -484,34 +484,60 @@ body, html {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
-/* CONTENEDOR HERO ADAPTABLE */
-.hero {
-    width: 100% !important;
-    max-width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 30px 15px !important;
-    margin: 0 !important;
+/* ESTILOS ESPECÍFICOS PARA COMPUTADORAS (Pantallas mayores a 769px) */
+@media (min-width: 769px) {
+    .hero {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 80px !important;
+        width: 100% !important;
+    }
+    
+    .hero-content {
+        flex: 1;
+        max-width: 50% !important;
+    }
+
+    .hero-image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .arch-frame {
+        max-width: 400px !important;
+    }
 }
 
-.hero-content, .hero-image-container {
-    width: 100% !important;
-    max-width: 100% !important;
-}
+/* ESTILOS ESPECÍFICOS PARA CELULARES (Pantallas menores a 768px) */
+@media (max-width: 768px) {
+    .hero {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 30px 20px !important;
+    }
 
-/* ASEGURAR QUE LA IMAGEN Y SU MARCO NO SE EXPASAN DE MÁS */
-.arch-frame {
-    width: 100% !important;
-    max-width: 300px !important; /* Ajusta este valor si lo ves muy chico */
-    margin: 0 auto !important;
-}
+    .hero-content, .hero-image-container {
+        width: 100% !important;
+    }
 
-.arch-frame img {
-    width: 100% !important;
-    height: auto !important;
-    display: block;
+    .arch-frame {
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+    }
+
+    .arch-frame img {
+        width: 100% !important;
+        height: auto !important;
+    }
 }
 
 /* CORRECCIÓN PARA CARRUSEL Y ELEMENTOS ANCHOS EN MÓVIL */
@@ -531,5 +557,13 @@ body, html {
     .grid-catalog {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
         gap: 15px !important;
+    }
+}
+
+/* CORRECCIÓN PARA EL TÍTULO EN CELULARES */
+@media (max-width: 768px) {
+    .collection-header h2 {
+        font-size: 1.6rem !important; /* Achica el texto lo justo para que no se corte */
+        white-space: nowrap !important; /* Evita que la palabra se rompa en varias líneas */
     }
 }
